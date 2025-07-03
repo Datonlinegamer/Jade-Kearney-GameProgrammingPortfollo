@@ -155,27 +155,9 @@
       </ul>
     </li>
   </ul>
+<img 
+   src="https://github.com/Datonlinegamer/Jade-Kearney-GameProgrammingPortfollo/blob/main/code.png?raw=true" 
 
-  <pre><code>
-
-UINTERFACE(Blueprintable)
-class CELESTIAL_API UInteractableInterface : public UInterface
-{
-	GENERATED_BODY()
-};
-
-class CELESTIAL_API IInteractableInterface
-{
-	GENERATED_BODY()
-
-public:
-	virtual void OnInteract(class APlayerCharacter* PlayerCharacter) = 0;
-	virtual void OnBeginFocus(class APlayerCharacter* PlayerCharacter) {}
-	virtual void OnEndFocus(class APlayerCharacter* PlayerCharacter) {}
-	virtual bool CanInteract(class APlayerCharacter* PlayerCharacter) const { return true; }
-	virtual FText GetInteractableName() const { return FText::FromString(TEXT("Interactable Object")); }
-};
-  </code></pre>
 </div>
 
   </div>
