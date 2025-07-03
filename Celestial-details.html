@@ -134,8 +134,26 @@
   src="https://github.com/Datonlinegamer/Jade-Kearney-GameProgrammingPortfollo/blob/main/HighresScreenshot00001.png?raw=true" 
   alt="Code example or system breakdown">
     <p>
-      This section of code handles the player’s movement and input binding in Unreal Engine using C++. 
-      It ensures responsive movement, jump functionality, and interaction handling through properly registered input actions.
+      This section of code explains how the character interaction system works:
+      UInteractionComponent handles line tracing and sets CurrentFocusedActor each frame.
+
+      Actor receives OnBeginFocus or OnEndFocus when looked at or not.
+      
+      When the player presses the interact key, UInteractionManager:
+      
+      Checks if actor is interactable.
+      
+      Calls OnInteract() on the object.
+      
+      This decouples responsibilities:
+      
+      Player doesn't do logic.
+      
+      Component detects.
+      
+      Manager executes.
+
+
     </p>
     <pre><code>
 
