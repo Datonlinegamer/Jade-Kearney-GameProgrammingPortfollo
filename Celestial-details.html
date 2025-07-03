@@ -157,7 +157,7 @@
   </ul>
 
   <pre><code>
-// Sample usage
+
 if (InteractionComponent->GetFocusedActor())
 {
     UInteractionManager::Interact(this, InteractionComponent);
@@ -165,13 +165,6 @@ if (InteractionComponent->GetFocusedActor())
   </code></pre>
 </div>
 
-
-void APlayerCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
-{
-    PlayerInputComponent->BindAxis("MoveForward", this, &APlayerCharacter::MoveForward);
-    PlayerInputComponent->BindAction("Jump", IE_Pressed, this, &ACharacter::Jump);
-}
-    </code></pre>
   </div>
 </div>
   <h2>Core Systems</h2>
