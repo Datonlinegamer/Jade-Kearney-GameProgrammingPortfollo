@@ -122,6 +122,25 @@
     </div>
   </div>
 </div>
+
+  <h2>Code Breakdown</h2>
+<div class="code-breakdown">
+  <img src="https://via.placeholder.com/600x300?text=Code+Screenshot" alt="Code example or system breakdown">
+  <div class="code-description">
+    <p>
+      This section of code handles the player’s movement and input binding in Unreal Engine using C++. 
+      It ensures responsive movement, jump functionality, and interaction handling through properly registered input actions.
+    </p>
+    <pre><code>
+
+void APlayerCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
+{
+    PlayerInputComponent->BindAxis("MoveForward", this, &APlayerCharacter::MoveForward);
+    PlayerInputComponent->BindAction("Jump", IE_Pressed, this, &ACharacter::Jump);
+}
+    </code></pre>
+  </div>
+</div>
   <h2>Core Systems</h2>
   <ul>
     <li>Character Movement & Controls – Implement smooth and responsive player movement.</li>
