@@ -127,35 +127,44 @@
   </div>
 </div>
 
-  <h2>Code Breakdown</h2>
-<div class="Charater interaction code-breakdown">
- <img 
-  class="code-image"
-  src="https://github.com/Datonlinegamer/Jade-Kearney-GameProgrammingPortfollo/blob/main/HighresScreenshot00001.png?raw=true" 
-  alt="Code example or system breakdown">
-    <p>
-      This section of code explains how the character interaction system works:
-      UInteractionComponent handles line tracing and sets CurrentFocusedActor each frame.
+<h2>Code Breakdown</h2>
+<div class="character-interaction code-breakdown">
+  <img 
+    class="code-image"
+    src="https://github.com/Datonlinegamer/Jade-Kearney-GameProgrammingPortfollo/blob/main/HighresScreenshot00001.png?raw=true" 
+    alt="Code example or system breakdown">
+  
+  <p>
+    This section of code explains how the character interaction system works:
+  </p>
+  
+  <ul>
+    <li><code>UInteractionComponent</code> handles line tracing and sets <code>CurrentFocusedActor</code> each frame.</li>
+    <li>Actor receives <code>OnBeginFocus</code> or <code>OnEndFocus</code> when looked at or not.</li>
+    <li>When the player presses the interact key, <code>UInteractionManager</code>:
+      <ul>
+        <li>Checks if the actor is interactable.</li>
+        <li>Calls <code>OnInteract()</code> on the object.</li>
+      </ul>
+    </li>
+    <li>This decouples responsibilities:
+      <ul>
+        <li>Player doesn't handle interaction logic.</li>
+        <li>Component handles detection.</li>
+        <li>Manager executes the interaction.</li>
+      </ul>
+    </li>
+  </ul>
 
-      Actor receives OnBeginFocus or OnEndFocus when looked at or not.
-      
-      When the player presses the interact key, UInteractionManager:
-      
-      Checks if actor is interactable.
-      
-      Calls OnInteract() on the object.
-      
-      This decouples responsibilities:
-      
-      Player doesn't do logic.
-      
-      Component detects.
-      
-      Manager executes.
+  <pre><code>
+// Sample usage
+if (InteractionComponent->GetFocusedActor())
+{
+    UInteractionManager::Interact(this, InteractionComponent);
+}
+  </code></pre>
+</div>
 
-
-    </p>
-    <pre><code>
 
 void APlayerCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 {
