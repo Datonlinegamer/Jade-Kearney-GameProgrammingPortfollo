@@ -134,52 +134,57 @@
     src="https://github.com/Datonlinegamer/Jade-Kearney-GameProgrammingPortfollo/blob/main/HighresScreenshot00001.png?raw=true" 
     alt="Code example or system breakdown">
   
-  <p>
-    This section of code explains how the character interaction system works:
-  </p>
-  
-  <ul>
-    <li><code>UInteractionComponent</code> handles line tracing and sets <code>CurrentFocusedActor</code> each frame.</li>
-    <li>Actor receives <code>OnBeginFocus</code> or <code>OnEndFocus</code> when looked at or not.</li>
-    <li>When the player presses the interact key, <code>UInteractionManager</code>:
-      <ul>
-        <li>Checks if the actor is interactable.</li>
-        <li>Calls <code>OnInteract()</code> on the object.</li>
-      </ul>
-    </li>
-    <li>This decouples responsibilities:
-      <ul>
-        <li>Player doesn't handle interaction logic.</li>
-        <li>Component handles detection.</li>
-        <li>Manager executes the interaction.</li>
- 
-<li><b>What This Interface Does:</b></li>
-This interface defines the standard contract that all interactable objects must follow. It allows any actor in the world to respond to player input in a consistent and modular way. Here's what each function does:
-OnInteract() – Core logic triggered when a player interacts.
-OnBeginFocus() – Called when the player starts looking at the object.
-OnEndFocus() – Called when the player stops looking at the object.
-CanInteract() – logic to enable/disable interaction based on conditions.
-GetInteractableName() – Returns a UI display name.
- <
+<p>
+  This section of code explains how the character interaction system works:
+</p>
+
+<ul>
+  <li><code>UInteractionComponent</code> handles line tracing and sets <code>CurrentFocusedActor</code> each frame.</li>
+  <li>Actor receives <code>OnBeginFocus</code> or <code>OnEndFocus</code> when looked at or not.</li>
+  <li>
+    When the player presses the interact key, <code>UInteractionManager</code>:
+    <ul>
+      <li>Checks if the actor is interactable.</li>
+      <li>Calls <code>OnInteract()</code> on the object.</li>
+    </ul>
+  </li>
+  <li>
+    This decouples responsibilities:
+    <ul>
+      <li>Player doesn't handle interaction logic.</li>
+      <li>Component handles detection.</li>
+      <li>Manager executes the interaction.</li>
+    </ul>
+  </li>
+</ul>
+
+<h3>What This Interface Does:</h3>
+<p>This interface defines the standard contract that all interactable objects must follow. It allows any actor in the world to respond to player input in a consistent and modular way. Here's what each function does:</p>
+<ul>
+  <li><code>OnInteract()</code> – Core logic triggered when a player interacts.</li>
+  <li><code>OnBeginFocus()</code> – Called when the player starts looking at the object.</li>
+  <li><code>OnEndFocus()</code> – Called when the player stops looking at the object.</li>
+  <li><code>CanInteract()</code> – Logic to enable/disable interaction based on conditions.</li>
+  <li><code>GetInteractableName()</code> – Returns a UI display name.</li>
+</ul>
+
+<h3>Code Example:</h3>
 <img 
- <img 
   class="code-image"
   src="https://github.com/Datonlinegamer/Jade-Kearney-GameProgrammingPortfollo/blob/main/code.PNG?raw=true" 
   alt="Code example"
   style="padding: 2rem; width: 400px;" 
-/>  
-  </li><b> Handles detection & focus logic:</b>
-<ul>
-    UInteractionComponent to check whether an actor can be focused or interacted with.
-  </ul>
+/>
+
+<h3>Handles Detection & Focus Logic:</h3>
+<p><code>UInteractionComponent</code> is used to check whether an actor can be focused or interacted with.</p>
 <img 
- <img 
   class="code-image"
   src="https://github.com/Datonlinegamer/Jade-Kearney-GameProgrammingPortfollo/blob/main/code1.PNG?raw=true" 
   alt="Code example"
   style="padding: 2rem; width: 400px;" 
 />
- 
+
 
     
   </div>
