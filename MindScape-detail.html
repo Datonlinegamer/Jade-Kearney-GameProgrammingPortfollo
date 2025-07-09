@@ -145,7 +145,38 @@
 <p>
   This section of code explains how the level chunk system works:
 </p>
- 
+
+  <ul>
+  <li><code>ChunkMarks</code> The ChuckMarker class in this Unity script handles procedural wall generation for a level chunk, including special wall types like doors and fog walls, based on the connectivity information stored in a LevelchunkInfo object.
+
+  <li>Actor receives <code>OnBeginFocus</code> or <code>OnEndFocus</code> when looked at or not.</li>
+  <li>
+    When the player presses the interact key, <code>UInteractionManager</code>:
+    <ul>
+      <li>Checks if the actor is interactable.</li>
+      <li>Calls <code>OnInteract()</code> on the object.</li>
+    </ul>
+  </li>
+  <li>
+    This decouples responsibilities:
+    <ul>
+      <li>Player doesn't handle interaction logic.</li>
+      <li>Component handles detection.</li>
+      <li>Manager executes the interaction.</li>
+    </ul>
+  </li>
+</ul>
+
+<h3>What This Interface Does:</h3>
+<p>This interface defines the standard contract that all interactable objects must follow. It allows any actor in the world to respond to player input in a consistent and modular way. Here's what each function does:</p>
+<ul>
+  <li><code>OnInteract()</code> – Core logic triggered when a player interacts.</li>
+  <li><code>OnBeginFocus()</code> – Called when the player starts looking at the object.</li>
+  <li><code>OnEndFocus()</code> – Called when the player stops looking at the object.</li>
+  <li><code>CanInteract()</code> – Logic to enable/disable interaction based on conditions.</li>
+  <li><code>GetInteractableName()</code> – Returns a UI display name.</li>
+</ul>
+
 
   <h2>Core Systems</h2>
   <ul>
