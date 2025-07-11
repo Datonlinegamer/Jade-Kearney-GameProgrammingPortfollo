@@ -14,10 +14,10 @@
       margin: auto;
       line-height: 1.6;
     }
-      .code-image {
-  width: 250px;
-  height: auto;
-}
+    .code-image {
+      width: 250px;
+      height: auto;
+    }
     h1, h2 {
       color: #0ff;
     }
@@ -36,48 +36,45 @@
       color: #0ff;
       text-decoration: underline;
     }
-
-        .carousel {
-  position: relative;
-  overflow: hidden;
-  width: 100%;
-  max-width: 300px; 
-  margin: 0;        
-}
-.carousel-wrapper {
-  width: 100%;
-  display: block;
-  margin-top: 1rem;
-}
-  .carousel-track {
-  display: flex;
-  justify-content: flex-start; 
-  transition: transform 0.5s ease-in-out;
-}
-  .carousel-track img {
-  width: 250px;
-  height: 150px;
-  object-fit: cover;
-  margin: 0;
-  padding: 0;
-}
+    .carousel {
+      position: relative;
+      overflow: hidden;
+      width: 100%;
+      max-width: 300px;
+      margin: 0;
+    }
+    .carousel-wrapper {
+      width: 100%;
+      display: block;
+      margin-top: 1rem;
+    }
+    .carousel-track {
+      display: flex;
+      justify-content: flex-start;
+      transition: transform 0.5s ease-in-out;
+    }
+    .carousel-track img {
+      width: 250px;
+      height: 150px;
+      object-fit: cover;
+      margin: 0;
+      padding: 0;
+    }
     .carousel-button {
       position: absolute;
       top: 50%;
-      transform: translateY(-10%);
+      transform: translateY(-50%);
       background-color: rgba(0, 0, 0, 0.5);
       color: #0ff;
       border: none;
       font-size: 2rem;
       cursor: pointer;
-      padding: 0rem;
+      padding: 0;
       z-index: 1;
     }
-
     .carousel-button.prev {
       left: 0;
     }
-
     .carousel-button.next {
       right: 0;
     }
@@ -87,17 +84,15 @@
   <h1>MindScape - Game Breakdown</h1>
 
   <iframe 
-  src="https://www.youtube.com/embed/GoQgeOyWq7U" 
-  frameborder="0" 
-  allowfullscreen
-  width="560" 
-  height="315">
-</iframe>
-
-
+    src="https://www.youtube.com/embed/GoQgeOyWq7U" 
+    frameborder="0" 
+    allowfullscreen>
+  </iframe>
 
   <h2>Platforms</h2>
-  <li>PC</li>
+  <ul>
+    <li>PC</li>
+  </ul>
 
   <h2>Tools</h2>
   <ul>
@@ -123,59 +118,45 @@
     MindScape is a procedurally generated game where you control a drone, navigating past enemies and locked doors while leveling up, crafting items, and ultimately seeking to defeat the Bwitch.
   </p>
 
-<div class="carousel-wrapper">
-  <div class="carousel">
-    <button class="carousel-button prev" onclick="prevSlide()">‹</button>
-    <div class="carousel-track" id="carouselTrack">
-      <img src="https://github.com/Datonlinegamer/Jade-Kearney-GameProgrammingPortfollo/blob/main/2.png?raw=true" alt="Slide 1" style="width: 150px; height: 150px;" />
-      <img src="https://github.com/Datonlinegamer/Jade-Kearney-GameProgrammingPortfollo/blob/main/mind2.PNG?raw=true" alt="Slide 2" />
-      <img src="https://via.placeholder.com/300x200?text=Image+3" alt="Slide 3" />
+  <div class="carousel-wrapper">
+    <div class="carousel">
+      <button class="carousel-button prev" onclick="prevSlide()">‹</button>
+      <div class="carousel-track" id="carouselTrack">
+        <img src="https://github.com/Datonlinegamer/Jade-Kearney-GameProgrammingPortfollo/blob/main/2.png?raw=true" alt="Slide 1" />
+        <img src="https://github.com/Datonlinegamer/Jade-Kearney-GameProgrammingPortfollo/blob/main/mind2.PNG?raw=true" alt="Slide 2" />
+        <img src="https://via.placeholder.com/300x200?text=Image+3" alt="Slide 3" />
+      </div>
+      <button class="carousel-button next" onclick="nextSlide()">›</button>
     </div>
-    <button class="carousel-button next" onclick="nextSlide()">›</button>
   </div>
 
+  <h2>Code Breakdown</h2>
+  <div class="Level chunk generation code-breakdown">
+    <img 
+      class="code-image"
+      src="https://github.com/Datonlinegamer/Jade-Kearney-GameProgrammingPortfollo/blob/main/mind.PNG?raw=true" 
+      alt="Code example or system breakdown">
+    
+    <p>This section of code explains how the level chunk system works:</p>
+    <ul>
+      <li>
+        <code>ChuckMarker</code> class handles procedural wall generation for a level chunk, including special wall types like doors and fog walls. It uses connectivity information provided by a <code>LevelchunkInfo</code> object to determine where to place:
+        <ul>
+          <li>Standard walls in directions without a connected chunk.</li>
+          <li>Doors at entry and exit points.</li>
+          <li>Fog walls in designated directions for blocked or mysterious paths.</li>
+        </ul>
+      </li>
+    </ul>
+  </div>
 
-<h2>Code Breakdown</h2>
-<div class="Level chunk generation code-breakdown">
+  <h3>Code Example:</h3>
   <img 
     class="code-image"
-    src="https://github.com/Datonlinegamer/Jade-Kearney-GameProgrammingPortfollo/blob/main/mind.PNG?raw=true" 
-    alt="Code example or system breakdown">
-  
-<p>
-  This section of code explains how the level chunk system works:
-</p>
-
- <ul>
-  <li>
-    <code>ChuckMarker</code> class handles procedural wall generation for a level chunk, including special wall types like doors and fog walls. It uses connectivity information provided by a <code>LevelchunkInfo</code> object to determine where to place:
-    <ul>
-      <li>Standard walls in directions without a connected chunk.</li>
-      <li>Doors at entry and exit points.</li>
-      <li>Fog walls in designated directions for blocked or mysterious paths.</li>
-    </ul>
-  </li>
-</ul>
-
-  </li>
-</ul>
-<h3>Code Example:</h3>
-<img 
-  class="code-image"
-  src="https://github.com/Datonlinegamer/Jade-Kearney-GameProgrammingPortfollo/blob/main/Mindcode.PNG?raw=true" 
-  alt="Code example"
-  style="padding: 2rem; width: 400px;" 
-/>
-<h3>What This Interface Does:</h3>
-<p>This interface defines the standard contract that all interactable objects must follow. It allows any actor in the world to respond to player input in a consistent and modular way. Here's what each function does:</p>
-<ul>
-  <li><code>OnInteract()</code> – Core logic triggered when a player interacts.</li>
-  <li><code>OnBeginFocus()</code> – Called when the player starts looking at the object.</li>
-  <li><code>OnEndFocus()</code> – Called when the player stops looking at the object.</li>
-  <li><code>CanInteract()</code> – Logic to enable/disable interaction based on conditions.</li>
-  <li><code>GetInteractableName()</code> – Returns a UI display name.</li>
-</ul>
-
+    src="https://github.com/Datonlinegamer/Jade-Kearney-GameProgrammingPortfollo/blob/main/Mindcode.PNG?raw=true" 
+    alt="Code example"
+    style="padding: 2rem; width: 400px;" 
+  />
 
   <h2>Core Systems</h2>
   <ul>
@@ -186,6 +167,7 @@
   </ul>
 
   <h2>Gameplay Breakdown</h2>
+
   <h3>Objectives & Missions</h3>
   <ul>
     <li>The player follows quests and missions (Find and kill Time Bwitch).</li>
@@ -223,5 +205,31 @@
   </ul>
 
   <p><a href="index.html">← Back to Portfolio</a></p>
+
+  <script>
+   
+    let currentIndex = 0;
+    const track = document.getElementById('carouselTrack');
+    const slides = track.children;
+    const slideWidth = slides[0].clientWidth;
+
+    function updateSlidePosition() {
+      track.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+    }
+
+    function prevSlide() {
+      if (currentIndex > 0) {
+        currentIndex--;
+        updateSlidePosition();
+      }
+    }
+
+    function nextSlide() {
+      if (currentIndex < slides.length - 1) {
+        currentIndex++;
+        updateSlidePosition();
+      }
+    }
+  </script>
 </body>
 </html>
