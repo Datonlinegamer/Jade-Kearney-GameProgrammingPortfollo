@@ -167,11 +167,33 @@
 </div>
     
   
-<p>
-  This section of code explains:
-</p>
+<p>This section of code explains how the character jump and ground detection work:</p>
 
-   <img 
+<ul>
+  <li> <strong>Jump()</strong><br>
+    <ul>
+      <li>Makes the player jump if grounded and the jump input is triggered.</li>
+      <li>Ensures a cooldown (<code>jumptracker</code>) is respected to prevent repeated jumping.</li>
+      <li>Resets vertical velocity before applying an impulse force upward.</li>
+      <li>Plays a jump sound effect on successful jump.</li>
+    </ul>
+  </li>
+  <li> <strong>groundcheck()</strong><br>
+    <ul>
+      <li>Uses a <code>BoxCast</code> to check if the player is on the ground.</li>
+      <li>If grounded, sets <code>isGrounded = true</code> and enables gravity.</li>
+      <li>If not grounded, sets <code>isGrounded = false</code> but keeps gravity on.</li>
+      <li>Resets vertical velocity when first touching the ground (to prevent bouncing).</li>
+    </ul>
+  </li>
+  <li> <strong>DistanceToGround()</strong><br>
+    <ul>
+      <li>Performs a <code>Raycast</code> downward to measure how far the player is from the ground.</li>
+      <li>Returns the distance if ground is hit, otherwise returns <code>0</code>.</li>
+    </ul>
+  </li>
+</ul>
+
       class="code-image"
       src="https://github.com/Datonlinegamer/Jade-Kearney-GameProgrammingPortfollo/blob/main/orlocode1.PNG?raw=true" 
       alt="Code example or system breakdown">
