@@ -167,7 +167,7 @@
 </div>
     
   
-<p>This section of code explains how the character jump and ground detection work:</p>
+<p>This section of code explains how the character jump, ground detection, and slope movement work:</p>
 
 <ul>
   <li> <strong>Jump()</strong><br>
@@ -178,6 +178,7 @@
       <li>Plays a jump sound effect on successful jump.</li>
     </ul>
   </li>
+
   <li> <strong>groundcheck()</strong><br>
     <ul>
       <li>Uses a <code>BoxCast</code> to check if the player is on the ground.</li>
@@ -186,10 +187,20 @@
       <li>Resets vertical velocity when first touching the ground (to prevent bouncing).</li>
     </ul>
   </li>
+
   <li> <strong>DistanceToGround()</strong><br>
     <ul>
       <li>Performs a <code>Raycast</code> downward to measure how far the player is from the ground.</li>
       <li>Returns the distance if ground is hit, otherwise returns <code>0</code>.</li>
+    </ul>
+  </li>
+
+  <li> <strong>Slope Handling</strong><br>
+    <ul>
+      <li>When airborne and falling, checks the player's distance to the ground.</li>
+      <li>If the player is hovering slightly above a slope, it moves the character downward to maintain ground contact.</li>
+      <li>Prevents floating or bouncing on sloped surfaces by manually adjusting the player's Y-position.</li>
+      <li>Applies friction when grounded to reduce sliding down slopes.</li>
     </ul>
   </li>
 </ul>
