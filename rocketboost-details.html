@@ -192,5 +192,29 @@
 
   <p><a href="index.html">← Back to Portfolio</a></p>
 </body>
+  <script>
+  let currentSlide = 0;
+  const track = document.getElementById("carouselTrack");
+  const slides = track.querySelectorAll("img");
+  const totalSlides = slides.length;
+
+  function updateSlidePosition() {
+    const slideWidth = slides[0].clientWidth;
+    track.style.transform = `translateX(-${currentSlide * slideWidth}px)`;
+  }
+
+  function nextSlide() {
+    currentSlide = (currentSlide + 1) % totalSlides;
+    updateSlidePosition();
+  }
+
+  function prevSlide() {
+    currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+    updateSlidePosition();
+  }
+
+  window.addEventListener("resize", updateSlidePosition);
+</script>
+
 </html>
 
