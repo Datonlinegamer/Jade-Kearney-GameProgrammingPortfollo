@@ -146,13 +146,12 @@
 
   <h2>Code Breakdown</h2>
   <p>This class handles sound effect playback in Unreal using a singleton pattern. Here's how it works:</p>
-  <ul>
-    <li><strong>Singleton Pattern:</strong> Ensures only one instance of <code>UUSoundEffectManager</code> exists at runtime via <code>Get()</code>.</li>
-    <li><strong>Initialization:</strong> Loads specific sound cues using <code>ConstructorHelpers::FObjectFinder</code> in the constructor.</li>
-    <li><strong>Sound Storage:</strong> Stores loaded sounds in a <code>SoundEffects</code> map using their names as keys.</li>
-    <li><strong>Playback Function:</strong> <code>PlaySoundEffect()</code> plays a sound at a given world location if it exists in the map.</li>
-    <li><strong>Memory Management:</strong> Uses <code>AddToRoot()</code> to prevent garbage collection on the singleton instance.</li>
-  </ul>
+      <li><strong>Singleton Pattern:</strong> Ensures only one instance of <code>UUSoundEffectManager</code> exists at runtime via <code>Get()</code>.</li>
+      <li><strong>Initialization:</strong> Loads specific sound cues using <code>ConstructorHelpers::FObjectFinder</code> in the constructor.</li>
+      <li><strong>Sound Storage:</strong> Stores loaded sounds in a <code>SoundEffects</code> map using their names as keys.</li>
+      <li><strong>Playback Function:</strong> <code>PlaySoundEffect()</code> plays a sound at a given world location if it exists in the map.</li>
+      <li><strong>Memory Management:</strong> Uses <code>AddToRoot()</code> to prevent garbage collection on the singleton instance.</li>
+   
 
   <div class="code-breakdown">
     <p><strong>Header File (.h):</strong><br>
