@@ -105,10 +105,16 @@
     class="code-image"
     src="https://github.com/Datonlinegamer/Jade-Kearney-GameProgrammingPortfollo/blob/main/mind.PNG?raw=true" 
     alt="Code example or system breakdown">
-  
-<p>
-  This section of code explains how the :
-</p>
+  <p>This class handles sound effect playback in Unreal  using a singleton pattern of code explains how the it works</p>
+<ul>
+  <li> <strong>Singleton Pattern:</strong> Ensures only one instance of <code>UUSoundEffectManager</code> exists at runtime via <code>Get()</code>.</li>
+  <li> <strong>Initialization:</strong> Loads specific sound cues using <code>ConstructorHelpers::FObjectFinder</code> in the constructor.</li>
+  <li><strong>Sound Storage:</strong> Stores loaded sounds in a <code>SoundEffects</code> map using their names as keys.</li>
+  <li> <strong>Playback Function:</strong> <code>PlaySoundEffect()</code> plays a sound at a given world location if it exists in the map.</li>
+  <li> <strong>Memory Management:</strong> Uses <code>AddToRoot()</code> to prevent garbage collection on the singleton instance.</li>
+</ul>
+
+
   <h2>Gameplay Breakdown</h2>
     
   <h3>Objectives & Missions</h3>
