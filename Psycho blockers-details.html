@@ -129,48 +129,29 @@
   <p>This section covers wall running and stuck recovery logic for the player character:</p>
 
 <ul>
-  <li> <strong>Wall Running</strong><br>
+  <li><strong>Wall Running</strong><br>
     <ul>
       <li>Wall running is activated when the player is near a wall using raycasts.</li>
       <li>Each frame, <code>Updatewallrun()</code> checks all ground raycast points:</li>
       <li>
-        <pre><code>
-      <img 
-      class="code-image"
-      src="https://github.com/Datonlinegamer/Jade-Kearney-GameProgrammingPortfollo/blob/main/blockercode1?raw=true" 
-      alt="Code example or system breakdown">
-        </code></pre>
-    
-      <li>If <code>wallrun</code> is active and the player is in the air, gravity is reduced and vertical velocity is slowed:</li>
-      <li>
-        <pre><code>
-if (wallrun && !grounded)
-{
-    if (rb.velocity.y &lt; 0)
-    {
-        float brake = .8f;
-        if (dagger.swinging) brake = .7f;
-        Vector3 v = rb.velocity;
-        v.y *= brake;
-        rb.velocity = v;
-        smoke.Emit(1);
-        SA.volume = 10;
-    }
-}
-        </code></pre>
+        <img 
+          class="code-image"
+          src="https://github.com/Datonlinegamer/Jade-Kearney-GameProgrammingPortfollo/blob/main/blockercode1.png?raw=true" 
+          alt="Code example or system breakdown">
       </li>
+      <li>If <code>wallrun</code> is active and the player is in the air, gravity is reduced and vertical velocity is slowed.</li>
     </ul>
   </li>
+</ul>
+
+       
 
   <li> <strong>Stuck Recovery</strong><br>
     <ul>
       <li>If the player is stuck to a surface (<code>isstuck()</code> returns true), a force is applied to push them left and unstick them.</li>
       <li>
         <pre><code>
-if (isstuck())
-{
-    rb.AddForce(Vector3.left * Fowardacceleration * 200, ForceMode.Impulse);
-}
+
         </code></pre>
       </li>
       <li>Before jumping, if <code>check</code> is not null, it removes the player from the object/platform using <code>check.Removerider(rb)</code> and sets <code>check = null</code>.</li>
