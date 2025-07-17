@@ -135,22 +135,7 @@
       <li>Each frame, <code>Updatewallrun()</code> checks all ground raycast points:</li>
       <li>
         <pre><code>
-void Updatewallrun()
-{
-    wallrun = false;
-    foreach (Transform point in groundraycastpoints)
-    {
-        RaycastHit hit;
-        if (Physics.Raycast(point.position, -Vector3.forward.normalized, out hit, 3.6f))
-        {
-            if (hit.transform.gameObject.GetComponent&lt;Wallrun&gt;())
-            {
-                wallrun = true;
-                rb.useGravity = false;
-            }
-        }
-    }
-}
+        <img src="https://github.com/Datonlinegamer/Jade-Kearney-GameProgrammingPortfollo/blob/main/blockercode1?raw=true" alt="Slide 2" />
         </code></pre>
       </li>
       <li>If <code>wallrun</code> is active and the player is in the air, gravity is reduced and vertical velocity is slowed:</li>
