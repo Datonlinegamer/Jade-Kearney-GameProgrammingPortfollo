@@ -208,7 +208,43 @@
       class="code-image"
       src="https://github.com/Datonlinegamer/Jade-Kearney-GameProgrammingPortfollo/blob/main/orlocode1.PNG?raw=true" 
       alt="Code example or system breakdown">
-    
+
+
+  <p>This section of code explains how the  third person camera system works:</p>
+<img 
+      class="code-image"
+      src="https://github.com/Datonlinegamer/Jade-Kearney-GameProgrammingPortfollo/blob/main/orlocameracode.PNG?raw=true" 
+      alt="Code example or system breakdown">
+
+<ul>
+  <li> <strong>HandleInput()</strong><br>
+    <ul>
+      <li>Captures mouse input for yaw and pitch rotation.</li>
+      <li>Clamps the pitch to prevent unnatural camera angles.</li>
+      <li>Handles zooming in and out using the scroll wheel.</li>
+    </ul>
+  </li>
+  <li> <strong>UpdateCameraRotation()</strong><br>
+    <ul>
+      <li>Smoothly interpolates the camera rotation to avoid jitter.</li>
+      <li>Uses <code>Vector3.SmoothDamp</code> for a cinematic feel.</li>
+    </ul>
+  </li>
+  <li> <strong>UpdateCameraPosition()</strong><br>
+    <ul>
+      <li>Calculates the camera's position behind the player based on rotation and zoom distance.</li>
+      <li>Uses a <code>Linecast</code> to detect and avoid clipping through environment objects.</li>
+      <li>Applies smoothing to camera movement using <code>Vector3.SmoothDamp</code>.</li>
+    </ul>
+  </li>
+  <li> <strong>LookAtTarget()</strong><br>
+    <ul>
+      <li>Ensures the camera always looks at the player’s upper body (configurable offset).</li>
+    </ul>
+  </li>
+</ul>
+
+  
 <h2>Ideation Concept, Pre-Production, Production, and Postn Mortem</h2>
 <p>
   Contributed to all phases of development, from initial concept and prototyping to final polish and retrospective analysis.
