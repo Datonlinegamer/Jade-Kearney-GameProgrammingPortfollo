@@ -151,7 +151,7 @@
   <li><strong>Initialization:</strong> Loads sound cues using <code>TSoftObjectPtr</code> paths in the constructor and stores them for later use.</li>
   <li><strong>Sound Storage:</strong> Uses a <code>TMap&lt;FName, TSoftObjectPtr&lt;USoundCue&gt;&gt;</code> to store and reference sounds by name.</li>
   <li><strong>Playback Functions:</strong> <code>PlayThrustSound()</code> plays the thrust cue, while <code>PlaySoundEffect()</code> plays any mapped cue by name at a given world location.</li>
-  <li><strong>Memory Management:</strong> Uses <code>AddToRoot()</code> to prevent garbage collection of the singleton instance.</li>
+  <li><strong>Memory Management:</strong> Uses <code>AddToRoot()</code> to prevent garbage collection.</li>
 </ul>
 
   <div class="code-breakdown">
