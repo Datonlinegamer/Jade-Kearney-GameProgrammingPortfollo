@@ -145,13 +145,14 @@
  
 
   <h2>Code Breakdown</h2>
-  <p>This class handles sound effect playback in Unreal using a singleton pattern. Here's how it works:</p>
-      <li><strong>Singleton Pattern:</strong> Ensures only one instance of <code>UUSoundEffectManager</code> exists at runtime via <code>Get()</code>.</li>
-      <li><strong>Initialization:</strong> Loads specific sound cues using <code>ConstructorHelpers::FObjectFinder</code> in the constructor.</li>
-      <li><strong>Sound Storage:</strong> Stores loaded sounds in a <code>SoundEffects</code> map using their names as keys.</li>
-      <li><strong>Playback Function:</strong> <code>PlaySoundEffect()</code> plays a sound at a given world location if it exists in the map.</li>
-      <li><strong>Memory Management:</strong> Uses <code>AddToRoot()</code> to prevent garbage collection on the singleton instance.</li>
-   
+ <p>This class handles sound effect playback in Unreal using a singleton pattern and soft references for memory-efficient asset management. Here's how it works:</p>
+<ul>
+  <li><strong>Singleton Pattern:</strong> Ensures only one instance of <code>UUSoundEffectManager</code> exists at runtime via the <code>Get()</code> method.</li>
+  <li><strong>Initialization:</strong> Loads sound cues using <code>TSoftObjectPtr</code> paths in the constructor and stores them for later use.</li>
+  <li><strong>Sound Storage:</strong> Uses a <code>TMap&lt;FName, TSoftObjectPtr&lt;USoundCue&gt;&gt;</code> to store and reference sounds by name.</li>
+  <li><strong>Playback Functions:</strong> <code>PlayThrustSound()</code> plays the thrust cue, while <code>PlaySoundEffect()</code> plays any mapped cue by name at a given world location.</li>
+  <li><strong>Memory Management:</strong> Uses <code>AddToRoot()</code> to prevent garbage collection of the singleton instance.</li>
+</ul>
 
   <div class="code-breakdown">
     <p><strong>Header File (.h):</strong><br>
