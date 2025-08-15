@@ -1,195 +1,112 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>GlazedAssault - Game Breakdown</title>
-  <style>
-    body {
-      font-family: 'Inter', sans-serif;
-      background-color: #111;
-      color: #eee;
-      padding: 2rem;
-      max-width: 900px;
-      margin: auto;
-      line-height: 1.6;
-    }
-    .code-image {
-      width: 250px;
-      height: auto;
-    }
-    h1, h2, h3 {
-      color: #0ff;
-    }
-    iframe {
-      width: 100%;
-      height: 400px;
-      border: none;
-      margin-bottom: 2rem;
-    }
-    ul {
-      list-style-type: disc;
-      margin-left: 1rem;
-      padding-left: 1rem;
-    }
-    a {
-      color: #0ff;
-      text-decoration: underline;
-    }
-    .carousel {
-      position: relative;
-      overflow: hidden;
-      width: 100%;
-      max-width: 300px;
-      margin: 0;
-    }
-    .carousel-wrapper {
-      width: 100%;
-      display: block;
-      margin-top: 1rem;
-    }
-    .carousel-track {
-      display: flex;
-      justify-content: flex-start;
-      transition: transform 0.5s ease-in-out;
-    }
-    .carousel-track img {
-      width: 250px;
-      height: 150px;
-      object-fit: cover;
-      margin: 0;
-      padding: 0;
-    }
-    .carousel-button {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      background-color: rgba(0, 0, 0, 0.5);
-      color: #0ff;
-      border: none;
-      font-size: 2rem;
-      cursor: pointer;
-      padding: 0;
-      z-index: 1;
-    }
-    .carousel-button.prev {
-      left: 0;
-    }
-    .carousel-button.next {
-      right: 0;
-    }
-  </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GlazedAssault - Game Breakdown</title>
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #111;
+      color: #eee;
+      padding: 2rem;
+      max-width: 900px;
+      margin: auto;
+      line-height: 1.6;
+    }
+    h1, h2, h3 {
+      color: #0ff;
+    }
+    ul {
+      list-style-type: disc;
+      margin-left: 1rem;
+      padding-left: 1rem;
+    }
+    a {
+      color: #0ff;
+      text-decoration: underline;
+    }
+    .code-image {
+      width: 250px;
+      height: auto;
+      margin-bottom: 1rem;
+    }
+  </style>
 </head>
 <body>
-  <h1>GlazedAssault - Game Breakdown</h1>
+  <h1>GlazedAssault</h1>
+  <p><strong>Solo</strong></p>
 
-    <iframe src="https://www.youtube.com/embed/GoQgeOyWq7U" allowfullscreen></iframe>
+  <h2>Platforms</h2>
+  <ul>
+    <li>PC</li>
+  </ul>
 
-  <h2>Project Info</h2>
-  <p>Solo</p>
-  
-  <h2>Platforms</h2>
-  <p>PC</p>
+  <h2>Tools</h2>
+  <ul>
+    <li>DirectX 11</li>
+    <li>Visual Studio</li>
+    <li>GitHub</li>
+  </ul>
 
-  <h2>Tools</h2>
-  <ul>
-    <li>DirectX11</li>
-    <li>Visual Studio</li>
-    <li>GitHub</li>
-  </ul>
+  <h2>Languages</h2>
+  <ul>
+    <li>C++</li>
+  </ul>
 
-  <h2>Languages</h2>
-  <ul>
-    <li>C++</li>
-  </ul>
+  <h2>Duration</h2>
+  <ul>
+    <li>2 Months</li>
+  </ul>
 
-  <h2>Duration</h2>
-  <p>2 months</p>
+  <h2>Role</h2>
+  <ul>
+    <li>Solo Developer</li>
+  </ul>
 
-  <h2>Role</h2>
-  <p>Solo Developer</p>
+  <h2>Summary</h2>
+  <p>
+    GlazedAssault is a 2D action-packed shoot 'em up where the player must survive a relentless assault of croissant enemies in a single-screen arena. Players manage a combo meter to unleash powerful abilities and outlast increasingly difficult waves.
+  </p>
 
-  <h2>Summary</h2>
-  <p>
-    GlazedAssault is a 2D action-packed shoot 'em up where the player must survive a relentless assault of croissant enemies in a single-screen arena. Players manage a combo meter to unleash powerful abilities and outlast increasingly difficult waves.
-  </p>
+  <h2>Core Systems</h2>
+  <ul>
+    <li><strong>Character Movement & Controls</strong> – Implement smooth and responsive player movement for dodging enemies and navigating the environment.</li>
+    <li><strong>Player Input Handling</strong> – Manage keyboard and mouse controls for character movement, aiming, and firing projectiles.</li>
+    <li><strong>Wave Management</strong> – Dynamically spawn and manage enemy types and numbers, with difficulty escalating across successive waves.</li>
+  </ul>
 
-    <div class="carousel-wrapper">
-    <div class="carousel">
-      <button class="carousel-button prev" onclick="prevSlide()">‹</button>
-      <div class="carousel-track" id="carouselTrack">
-        <img src="image_8ebf6c.png" alt="GlazedAssault Screenshot 1" />
-        <img src="image_83d760.png" alt="GlazedAssault Screenshot 2" />
-        <img src="image_8f2c6a.jpg" alt="GlazedAssault Screenshot 3" />
-      </div>
-      <button class="carousel-button next" onclick="nextSlide()">›</button>
-    </div>
-  </div>
+  <h2>Gameplay Breakdown</h2>
 
-  <h2>Core Systems</h2>
-  <ul>
-    <li><strong>Character Movement & Controls</strong> – Implement smooth and responsive player movement for dodging enemies and navigating the environment.</li>
-    <li><strong>Player Input Handling</strong> – Manage controls for movement, aiming, and firing projectiles.</li>
-    <li><strong>Wave Management</strong> - Dynamically spawn and manage enemy types and numbers, with difficulty escalating across successive waves.</li>
-  </ul>
+  <h3>Objectives & Missions</h3>
+  <ul>
+    <li>The primary objective is survival. The player must defeat all enemies in a wave to advance to the next, with the ultimate goal of surviving all five waves of enemies.</li>
+  </ul>
 
-  <h2>Gameplay Breakdown</h2>
-  <h3>Objectives & Missions</h3>
-  <ul>
-    <li>The primary objective is survival. The player must defeat all enemies in a wave to advance to the next, with the ultimate goal of surviving all five waves of enemies.</li>
-  </ul>
+  <h3>Combat Mechanics</h3>
+  <ul>
+    <li>Engage in fast-paced projectile-based combat against a variety of enemies.</li>
+    <li>Manage character health and strategically use firepower to clear each wave.</li>
+  </ul>
 
-  <h3>Combat Mechanics</h3>
-  <ul>
-    <li>Engage in fast-paced projectile-based combat against a variety of enemies.</li>
-    <li>Manage your character's health to survive each wave.</li>
-  </ul>
+  <h3>Combo & Power-up System</h3>
+  <ul>
+    <li>Build a combo multiplier by continuously destroying enemies.</li>
+    <li>High combo counts unlock powerful, screen-clearing abilities providing a temporary advantage.</li>
+  </ul>
 
-  <h3>Combo & Power-up System</h3>
-  <ul>
-    <li>Build a combo multiplier by continuously destroying enemies.</li>
-    <li>Achieve a high combo count to unleash a powerful, screen-clearing ability.</li>
-  </ul>
+  <h3>Progression & Feedback Loop</h3>
+  <ul>
+    <li>Survive each wave to face increasingly difficult enemies.</li>
+    <li>The combo meter provides visual feedback for combat effectiveness.</li>
+  </ul>
 
-  <h3>Progression & Feedback Loop</h3>
-  <ul>
-    <li>Survive each wave to face a more challenging one with a greater number and speed of enemies.</li>
-    <li>The combo meter provides direct visual feedback on combat effectiveness.</li>
-  </ul>
+  <h3>Endgame or Loop Reset</h3>
+  <ul>
+    <li>The game concludes either by completing all waves or if the player's health reaches zero.</li>
+    <li>Game-over allows players to restart and attempt to beat their best time.</li>
+  </ul>
 
-  <h3>Endgame or Loop Reset</h3>
-  <ul>
-    <li>The game concludes either by successfully completing all waves or if the player's health reaches zero, triggering a game-over screen.</li>
-    <li>A game over allows players to restart the game to beat their best time.</li>
-  </ul>
-
-  <p><a href="index.html">← Back to Portfolio</a></p>
-
-  <script>
-    let currentIndex = 0;
-    const track = document.getElementById('carouselTrack');
-    const slides = track.children;
-    const slideWidth = slides[0].clientWidth;
-
-    function updateSlidePosition() {
-      track.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
-    }
-
-    function prevSlide() {
-      if (currentIndex > 0) {
-        currentIndex--;
-        updateSlidePosition();
-      }
-    }
-
-    function nextSlide() {
-      if (currentIndex < slides.length - 1) {
-        currentIndex++;
-        updateSlidePosition();
-      }
-    }
-  </script>
+  <p><a href="index.html">← Back to Portfolio</a></p>
 </body>
 </html>
-
-
