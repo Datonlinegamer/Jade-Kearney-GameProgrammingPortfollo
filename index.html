@@ -1,57 +1,154 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JadeKearney's Game Programmer Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background: #111;
+            color: #eee;
+            line-height: 1.6;
+        }
 
-<section id="projects">
-    <h2>Projects</h2>
+        /* 🔹 Sticky Header */
+        header {
+            background: #1a1a1a;
+            padding: 2rem;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid #333;
+        }
 
-    <div class="projects-container">
-        <div class="project-card">
-            <img src="https://github.com/Datonlinegamer/Jade-Kearney-GameProgrammingPortfollo/blob/main/BG.png?raw=true" alt="GlazedAssault">
-            <div class="project-info">
-                <h3>GlazedAssault (DirectX 11)</h3>
-                <p>The latest project I’ve been working on, featuring advanced DirectX 11 rendering, batching, and sprite systems.</p>
-                <a href="GlazedAssault.html" class="project-button">View Project</a>
-            </div>
-        </div>
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
 
-        <div class="project-card">
-            <img src="https://github.com/Datonlinegamer/Jade-Kearney-GameProgrammingPortfollo/blob/main/------.png?raw=true" alt="Celestial">
-            <div class="project-info">
-                <h3>Celestial (Unreal Engine)</h3>
-                <p>A large-scale Unreal Engine game combining RTS and FPS gameplay elements in one seamless experience.</p>
-                <a href="Celestial-details.html" class="project-button">View Project</a>
-            </div>
-        </div>
+        nav {
+            text-align: center;
+            margin-top: 1rem;
+        }
 
-        <div class="project-card">
-            <img src="https://github.com/Datonlinegamer/Jade-Kearney-GameProgrammingPortfollo/blob/main/Min.png?raw=true" alt="MindScape">
-            <div class="project-info">
-                <h3>MindScape (Unity Engine)</h3>
-                <p>A Unity project exploring psychological puzzle gameplay with adaptive systems and unique level mechanics.</p>
-                <a href="MindScape-detail.html" class="project-button">View Project</a>
-            </div>
-        </div>
+        nav a {
+            color: #0ff;
+            text-decoration: none;
+            margin: 0 1rem;
+            transition: color 0.3s;
+        }
 
-        <div class="project-card">
-            <img src="https://github.com/Datonlinegamer/Jade-Kearney-GameProgrammingPortfollo/blob/main/gg.png?raw=true" alt="Psycho Blockers">
-            <div class="project-info">
-                <h3>Psycho Blockers (Unity Engine)</h3>
-                <p>Multiplayer puzzle-action game featuring unique player powers and reactive level environments.</p>
-                <a href="Psycho blockers-details.html" class="project-button">View Project</a>
-            </div>
-        </div>
+        nav a:hover {
+            color: #00cccc;
+        }
 
-        <div class="project-card">
-            <img src="https://github.com/Datonlinegamer/Jade-Kearney-GameProgrammingPortfollo/blob/main/orloCover.png?raw=true" alt="Orlo">
-            <div class="project-info">
-                <h3>Orlo (Unity Engine)</h3>
-                <p>Adventure platformer focusing on momentum-based mechanics, polished visuals, and smooth character control.</p>
-                <a href="Orlo-details.html" class="project-button">View Project</a>
-            </div>
-        </div>
+        section {
+            padding: 3rem 1rem;
+            max-width: 800px;
+            margin: auto;
+        }
+
+        .project {
+            background: #222;
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            border-radius: 8px;
+        }
+
+        .project img {
+            max-width: 100%;
+            border-radius: 4px;
+        }
+
+        footer {
+            background: #1a1a1a;
+            text-align: center;
+            padding: 2rem;
+            font-size: 0.9rem;
+            color: #999;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Jade Kearney</h1>
+        <p>Game Programmer | Unreal Engine | C++ | Unity | C#</p>
+        <nav>
+            <a href="#about">About</a>
+            <a href="#projects">Projects</a>
+            <a href="#blog">Blog</a>
+            <a href="https://drive.google.com/file/d/12TBwip6OcR6yspVPDqThjTsOu0TU3MOS/view?usp=sharing">Resume</a>
+            <a href="https://www.linkedin.com/in/jadekprofile/" target="_blank">LinkedIn</a>
+            <a href="https://github.com/Datonlinegamer" target="_blank">GitHub</a>
+        </nav>
+    </header>
+
+    <div style="display: flex; justify-content: center; margin-top: 2rem;">
+        <iframe 
+            width="800" 
+            height="450" 
+            src="https://www.youtube.com/embed/T1A6-lIfHmU" 
+            frameborder="0" 
+            allowfullscreen>
+        </iframe>
     </div>
-</section>
 
+    <section id="about">
+        <h2>About Me</h2>
+        <p>
+            Game programmer with 3 years' experience with a strong focus on implementing gameplay mechanics, UI, audio, and systems, all driven by a deep passion for games and game development. My career has been characterized by continuous growth in knowledge and skills, which I have eagerly shared with others through teaching and mentorship. As a former game design instructor, I have stayed at the forefront of emerging technologies and design strategies. I am committed to ongoing learning and professional development, ensuring that my expertise in the industry continually evolves. My dedication to the world of game development grows stronger with each new challenge I encounter.
+        </p>
+    </section>
 
- 
+    <section id="projects">
+        <h2>Projects</h2>
+
+        <div class="project">
+            <h3>GlazedAssault (DirectX 11)</h3>
+            <img src="https://github.com/Datonlinegamer/Jade-Kearney-GameProgrammingPortfollo/blob/main/BG.png?raw=true" alt="GlazedAssault">
+            <p><a href="GlazedAssault.html" class="button">View Details</a></p>
+        </div>
+
+        <div class="project">
+            <h3>Celestial (Unreal Engine)</h3>
+            <img src="https://github.com/Datonlinegamer/Jade-Kearney-GameProgrammingPortfollo/blob/main/------.png?raw=true" alt="Celestial">
+            <p><a href="Celestial-details.html" class="button">View Details</a></p>
+        </div>
+
+        <div class="project">
+            <h3>MindScape (Unity Engine)</h3>
+            <img src="https://github.com/Datonlinegamer/Jade-Kearney-GameProgrammingPortfollo/blob/main/Min.png?raw=true" alt="MindScape">
+            <p><a href="MindScape-detail.html" class="button">View Details</a></p>
+        </div>
+
+        <div class="project">
+            <h3>Psycho Blockers (Unity Engine)</h3>
+            <img src="https://github.com/Datonlinegamer/Jade-Kearney-GameProgrammingPortfollo/blob/main/gg.png?raw=true" alt="Psycho Blockers">
+            <p><a href="Psycho blockers-details.html" class="button">View Details</a></p>
+        </div>
+
+        <div class="project">
+            <h3>Orlo (Unity Engine)</h3>
+            <img src="https://github.com/Datonlinegamer/Jade-Kearney-GameProgrammingPortfollo/blob/main/orloCover.png?raw=true" alt="Orlo">
+            <p><a href="Orlo-details.html" class="button">View Details</a></p>
+        </div>
+
+    </section>
+
+    <footer>
+        &copy; 2025 Jade Kearney. All rights reserved.
+    </footer>
+
+</body>
+</html>
+
 
 
 
