@@ -94,25 +94,19 @@
     }
 
     
-    .projects-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1.5rem;
+.projects-container.single {
+  display: flex;
   justify-content: center;
-  align-items: stretch;
+  align-items: center;
   padding-top: 2rem;
-  max-width: 1000px;
-  margin: 0 auto;
 }
 
-.projects-container.single {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 260px)); /* narrower cards */
-  justify-content: center; /* centers the single card */
-  gap: 1.5rem;
-  margin: 0 auto;
-  max-width: 300px; /* limits total container width */
+.projects-container.single .project {
+  width: 220px;   /* fixed width */
+  max-width: 90%;
+  height: 250px;  /* consistent with other cards */
 }
+
 
 .project {
   background: #1b1b1b;
