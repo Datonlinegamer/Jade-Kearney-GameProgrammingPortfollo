@@ -116,55 +116,41 @@
 .project {
   background: #1b1b1b;
   border-radius: 8px;
-  padding: 0.6rem;
+  padding: 0.8rem;       /* slightly more padding */
   text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 250px; 
+  height: 280px;          /* increase height */
+  width: 260px;           /* increase width */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   box-shadow: 0 2px 6px rgba(0, 255, 255, 0.05);
 }
 
-.project:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 3px 12px rgba(0, 255, 255, 0.15);
-}
-
 .project img {
   width: 100%;
-  height: 100px; 
+  height: 120px;          /* larger image */
   object-fit: cover;
   border-radius: 6px;
-  margin-bottom: 0.4rem;
+  margin-bottom: 0.5rem;
 }
 
 .project h3 {
-  font-size: 0.9rem;
-  margin-bottom: 0.2rem;
-  color: #0ff;
+  font-size: 1rem;        /* slightly larger text */
+  margin-bottom: 0.3rem;
 }
 
 .project p {
-  font-size: 0.75rem;
-  color: #ccc;
-  line-height: 1.3;
+  font-size: 0.8rem;      /* slightly larger text */
+  line-height: 1.4;
   flex-grow: 1;
-  margin-bottom: 0.4rem;
+  margin-bottom: 0.5rem;
 }
 
 .button {
-  display: inline-block;
-  padding: 0.3rem 0.8rem;
-  background: #0ff;
-  color: #111;
-  border-radius: 4px;
-  font-weight: 600;
-  font-size: 0.75rem;
-  transition: background 0.3s ease;
-  align-self: center;
+  padding: 0.4rem 1rem;   /* slightly bigger button */
+  font-size: 0.8rem;
 }
-
 .button:hover {
   background: #00cccc;
 }
