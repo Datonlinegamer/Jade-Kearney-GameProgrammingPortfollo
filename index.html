@@ -1,259 +1,58 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Jade Kearney - Game Programmer Portfolio</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+.project {
+  background: #1b1b1b;
+  border-radius: 8px;
+  padding: 0.6rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  height: 250px; /* smaller height */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 2px 6px rgba(0, 255, 255, 0.05);
+}
 
-    body {
-      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #111;
-      color: #eee;
-      line-height: 1.6;
-    }
+.project:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 3px 12px rgba(0, 255, 255, 0.15);
+}
 
-    a {
-      color: #0ff;
-      text-decoration: none;
-    }
+.project img {
+  width: 100%;
+  height: 80px; /* smaller image height */
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 0.4rem;
+}
 
-    a:hover {
-      text-decoration: underline;
-    }
+.project h3 {
+  font-size: 0.9rem;
+  margin-bottom: 0.2rem;
+  color: #0ff;
+}
 
-    h1, h2, h3 {
-      color: #0ff;
-      font-weight: 600;
-    }
+.project p {
+  font-size: 0.75rem;
+  color: #ccc;
+  line-height: 1.3;
+  flex-grow: 1;
+  margin-bottom: 0.4rem;
+}
 
-    section {
-      padding: 3rem 1rem;
-      margin: auto;
-      max-width: 1200px;
-    }
+.button {
+  display: inline-block;
+  padding: 0.3rem 0.8rem;
+  background: #0ff;
+  color: #111;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 0.75rem;
+  transition: background 0.3s ease;
+  align-self: center;
+}
 
-    header {
-      background: #000;
-      padding: 1rem 0;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      border-bottom: 1px solid #0ff;
-    }
+.button:hover {
+  background: #00cccc;
+}
 
-    nav {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 2rem;
-    }
-
-    nav a {
-      font-weight: 600;
-      transition: color 0.3s ease;
-    }
-
-    nav a:hover {
-      color: #00cccc;
-    }
-
-    .hero {
-      text-align: center;
-      padding: 4rem 1rem;
-      background: linear-gradient(180deg, #000, #111);
-    }
-
-    .hero h1 {
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
-    }
-
-    .hero p {
-      color: #ccc;
-      font-size: 1.1rem;
-    }
-
-    .video-container {
-      display: flex;
-      justify-content: center;
-      margin-top: 2rem;
-    }
-
-    iframe {
-      width: 100%;
-      max-width: 800px;
-      aspect-ratio: 16/9;
-      border: 2px solid #0ff;
-      border-radius: 8px;
-    }
-
-    /* PROJECTS GRID */
-    .projects-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 1.5rem;
-      justify-content: center;
-      align-items: stretch; /* ensures equal card height */
-      padding-top: 2rem;
-      max-width: 1000px;
-      margin: 0 auto;
-    }
-
-    .project {
-      background: #1b1b1b;
-      border-radius: 8px;
-      padding: 0.75rem;
-      text-align: center;
-      display: flex;
-      flex-direction: column;
-      height: 320px; /* consistent card height */
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      box-shadow: 0 2px 8px rgba(0, 255, 255, 0.05);
-    }
-
-    .project:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 4px 15px rgba(0, 255, 255, 0.15);
-    }
-
-    .project img {
-      width: 100%;
-      height: 110px;
-      object-fit: cover;
-      border-radius: 6px;
-      margin-bottom: 0.5rem;
-    }
-
-    .project h3 {
-      font-size: 1rem;
-      margin-bottom: 0.25rem;
-      color: #0ff;
-    }
-
-    .project p {
-      font-size: 0.85rem;
-      color: #ccc;
-      line-height: 1.4;
-      flex-grow: 1; /* ensures text area fills space evenly */
-      margin-bottom: 0.5rem;
-    }
-
-    .button {
-      display: inline-block;
-      padding: 0.4rem 0.9rem;
-      background: #0ff;
-      color: #111;
-      border-radius: 4px;
-      font-weight: 600;
-      font-size: 0.8rem;
-      transition: background 0.3s ease;
-      align-self: center;
-    }
-
-    .button:hover {
-      background: #00cccc;
-    }
-
-    footer {
-      text-align: center;
-      padding: 2rem 1rem;
-      background: #000;
-      border-top: 1px solid #0ff;
-      color: #aaa;
-      margin-top: 80px;
-    }
-
-    footer a {
-      color: #0ff;
-    }
-  </style>
-</head>
-<body>
-
-  <header>
-    <nav>
-      <a href="#about">About</a>
-      <a href="#projects">Projects</a>
-    </nav>
-  </header>
-
-  <section class="hero">
-    <h1>Jade Kearney</h1>
-    <p>Game Programmer | C++ | C#</p>
-  </section>
-
-  <div class="video-container">
-    <iframe src="https://www.youtube.com/embed/JqJ3DRqUoU4"
-      title="Demo Reel" allowfullscreen></iframe>
-  </div>
-
-  <section id="about">
-    <h2>About Me</h2>
-    <p>
-      Game Programmer with 3+ years of professional experience. I began my career as a Game Design Instructor, teaching for four and a half years. During that time, I guided students in technical game design using Unity, helping them implement mechanics, UI, and animation, and teaching them how to create a game from start to finish. To further develop my skills, I attended CG Spectrum, where I was mentored by industry professionals in C++ game programming. I currently work as an Unreal Engine 5 Developer at Digital Scorpion Interactive, specializing in algorithms and mathematics for their IPs.
-    </p>
-  </section>
-
-  <section id="projects">
-    <h2>Projects</h2>
-
-    <h3> Game Studio Work Experience</h3>
-    <div class="projects-container">
-      <div class="project">
-        <img src="https://github.com/Datonlinegamer/Jade-Kearney-GameProgrammingPortfollo/blob/main/FrogDoku.jpg?raw=true" alt="FrogDoku">
-        <h3>FrogDoku</h3>
-        <p>Unreal Engine 5 Developer (Digital Scorpion Interactive) – Assisted in diagnosing and resolving engine-level graphical issues.</p>
-        <a href="https://store.steampowered.com/app/xxxxx/FrogDoku/" target="_blank" class="button">View details</a>
-      </div>
-    </div>
-
-    <h3 style="margin-top: 3rem;"> Personal Projects</h3>
-    <div class="projects-container">
-      <div class="project">
-        <img src="https://github.com/Datonlinegamer/Jade-Kearney-GameProgrammingPortfollo/blob/main/BG.png?raw=true" alt="Psycho Blockers">
-        <h3>Psycho Blockers</h3>
-        <p>Solo Hack-and-Slash Platformer (Unity) – Developed combat mechanics, player movement, and level design.</p>
-        <a href="https://datonlinegamer.itch.io/" target="_blank" class="button">View details</a>
-      </div>
-
-      <div class="project">
-        <img src="https://github.com/Datonlinegamer/Jade-Kearney-GameProgrammingPortfollo/blob/main/BG.png?raw=true" alt="Orlo">
-        <h3>Orlo</h3>
-        <p>Team Project (Unity, 10 members) – Created character movement systems and gameplay interactions.</p>
-        <a href="https://itch.io/" target="_blank" class="button">View details</a>
-      </div>
-
-      <div class="project">
-        <img src="https://github.com/Datonlinegamer/Jade-Kearney-GameProgrammingPortfollo/blob/main/BG.png?raw=true" alt="Space Invaders Clone">
-        <h3>Space Invaders Clone</h3>
-        <p>Raylib C++ remake (PC) – Implemented custom sprite rendering and input systems.</p>
-        <a href="https://github.com/" target="_blank" class="button">View details</a>
-      </div>
-    </div>
-  </section>
-
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>📧 <a href="mailto:codejadek0@gmail.com">codejadek0@gmail.com</a></p>
-    <p>🔗 
-      <a href="https://www.linkedin.com/in/jadekprofile/">LinkedIn</a> | 
-      <a href="https://github.com/Datonlinegamer">GitHub</a> | 
-      <a href="https://drive.google.com/file/d/1dylElAX4UeQw6uhLPq55ry5R-CccOFNy/view?usp=sharing">Resume</a>
-    </p>
-  </section>
-
-  <footer>
-    <p>© 2025 Jade Kearney. All rights reserved.</p>
-  </footer>
-
-</body>
-</html>
 
 
 
