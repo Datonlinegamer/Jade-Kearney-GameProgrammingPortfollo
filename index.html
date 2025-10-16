@@ -97,7 +97,7 @@
     }
 
 
-    .projects-container {
+   .projects-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 1.5rem;
@@ -113,6 +113,10 @@
   border-radius: 8px;
   padding: 1rem;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 360px; /* ✅ Fixed uniform height */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   box-shadow: 0 2px 8px rgba(0, 255, 255, 0.05);
 }
@@ -124,7 +128,8 @@
 
 .project img {
   width: 100%;
-  height: auto;
+  height: 140px; /* ✅ Consistent image height */
+  object-fit: cover; /* keeps proportions clean */
   border-radius: 6px;
   margin-bottom: 0.75rem;
 }
@@ -138,8 +143,9 @@
 .project p {
   font-size: 0.9rem;
   color: #ccc;
-  margin-bottom: 0.75rem;
+  flex-grow: 1;
   line-height: 1.4;
+  margin-bottom: 0.75rem;
 }
 
 .button {
@@ -151,6 +157,7 @@
   font-weight: 600;
   font-size: 0.9rem;
   transition: background 0.3s ease;
+  align-self: center;
 }
 
 .button:hover {
