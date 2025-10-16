@@ -1,150 +1,241 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JadeKearney's Game Programmer Portfolio</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-        body {
-            margin: 0;
-            font-family: 'Inter', sans-serif;
-            background: #111;
-            color: #eee;
-            line-height: 1.6;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jade Kearney - Game Programmer Portfolio</title>
+  <style>
+  
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-        
-        header {
-            background: #1a1a1a;
-            padding: 2rem;
-            text-align: center;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            border-bottom: 1px solid #333;
-        }
+    body {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #111;
+      color: #eee;
+      line-height: 1.6;
+    }
 
-        header h1 {
-            margin: 0;
-            font-size: 2.5rem;
-        }
+    a {
+      color: #0ff;
+      text-decoration: none;
+    }
 
-        nav {
-            text-align: center;
-            margin-top: 1rem;
-        }
+    a:hover {
+      text-decoration: underline;
+    }
 
-        nav a {
-            color: #0ff;
-            text-decoration: none;
-            margin: 0 1rem;
-            transition: color 0.3s;
-        }
+    h1, h2, h3 {
+      color: #0ff;
+      font-weight: 600;
+    }
 
-        nav a:hover {
-            color: #00cccc;
-        }
+    section {
+      padding: 3rem 1rem;
+      margin: auto;
+      max-width: 1200px;
+    }
 
-        section {
-            padding: 3rem 1rem;
-            max-width: 800px;
-            margin: auto;
-        }
+    header {
+      background: #000;
+      padding: 1rem 0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      border-bottom: 1px solid #0ff;
+    }
 
-        .project {
-            background: #222;
-            margin-bottom: 2rem;
-            padding: 1.5rem;
-            border-radius: 8px;
-        }
+    nav {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 2rem;
+    }
 
-        .project img {
-            max-width: 100%;
-            border-radius: 4px;
-        }
+    nav a {
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
 
-        footer {
-            background: #1a1a1a;
-            text-align: center;
-            padding: 2rem;
-            font-size: 0.9rem;
-            color: #999;
-        }
-    </style>
+    nav a:hover {
+      color: #00cccc;
+    }
+
+ 
+    .hero {
+      text-align: center;
+      padding: 4rem 1rem;
+      background: linear-gradient(180deg, #000, #111);
+    }
+
+    .hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      color: #ccc;
+      font-size: 1.1rem;
+    }
+
+
+    .video-container {
+      display: flex;
+      justify-content: center;
+      margin-top: 2rem;
+    }
+
+    iframe {
+      width: 100%;
+      max-width: 800px;
+      aspect-ratio: 16/9;
+      border: 2px solid #0ff;
+      border-radius: 8px;
+    }
+
+
+    .projects-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      justify-content: center;
+      align-items: start;
+      padding-top: 2rem;
+    }
+
+    .project {
+      background: #222;
+      border-radius: 8px;
+      padding: 1.5rem;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .project:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 4px 15px rgba(0, 255, 255, 0.2);
+    }
+
+    .project img {
+      width: 100%;
+      height: auto;
+      border-radius: 6px;
+      margin-bottom: 1rem;
+    }
+
+    .project h3 {
+      margin-bottom: 0.5rem;
+    }
+
+    .button {
+      display: inline-block;
+      margin-top: 0.5rem;
+      padding: 0.6rem 1.2rem;
+      background: #0ff;
+      color: #111;
+      border-radius: 4px;
+      font-weight: 600;
+      transition: background 0.3s ease;
+    }
+
+    .button:hover {
+      background: #00cccc;
+    }
+
+   
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      background: #000;
+      border-top: 1px solid #0ff;
+      color: #aaa;
+    }
+
+    footer a {
+      color: #0ff;
+    }
+  </style>
 </head>
 <body>
 
-    <header>
-        <h1>Jade Kearney</h1>
-        <p>Game Programmer | Unreal Engine | C++ | Unity | C#</p>
-        <nav>
-            <a href="#about">About</a>
-            <a href="#projects">Projects</a>
-            <a href="#blog">Blog</a>
-            <a href="https://drive.google.com/file/d/1dylElAX4UeQw6uhLPq55ry5R-CccOFNy/view?usp=sharing">Resume</a>
-            <a href="https://www.linkedin.com/in/jadekprofile/" target="_blank">LinkedIn</a>
-            <a href="https://github.com/Datonlinegamer" target="_blank">GitHub</a>
-        </nav>
-    </header>
 
-    <div style="display: flex; justify-content: center; margin-top: 2rem;">
-        <iframe 
-            width="800" 
-            height="450" 
-            src="https://www.youtube.com/embed/T1A6-lIfHmU" 
-            frameborder="0" 
-            allowfullscreen>
-        </iframe>
-    </div>
+  <header>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
 
-    <section id="about">
-        <h2>About Me</h2>
-        <p>
-            Game programmer with 3 years' experience with a strong focus on implementing gameplay mechanics, UI, audio, and systems, all driven by a deep passion for games and game development. My career has been characterized by continuous growth in knowledge and skills, which I have eagerly shared with others through teaching and mentorship. As a former game design instructor, I have stayed at the forefront of emerging technologies and design strategies. I am committed to ongoing learning and professional development, ensuring that my expertise in the industry continually evolves. My dedication to the world of game development grows stronger with each new challenge I encounter.
-        </p>
-    </section>
+  
+  <section class="hero">
+    <h1>Jade Kearney</h1>
+    <p>Gameplay Programmer | Unreal Engine & Unity Developer</p>
+  </section>
 
-   <section id="projects">
-  <h2 style="text-align: center;">Projects</h2>
-  <div class="projects-container">
-    <div class="project">
-      <h3>GlazedAssault (DirectX 11)</h3>
-      <img src="https://github.com/Datonlinegamer/Jade-Kearney-GameProgrammingPortfollo/blob/main/BG.png?raw=true" alt="GlazedAssault">
-      <p><a href="GlazedAssault.html" class="button">View Details</a></p>
-    </div>
-    <div class="project">
-      <h3>Celestial (Unreal Engine)</h3>
-      <img src="https://github.com/Datonlinegamer/Jade-Kearney-GameProgrammingPortfollo/blob/main/------.png?raw=true" alt="Celestial">
-      <p><a href="Celestial-details.html" class="button">View Details</a></p>
-    </div>
-    <div class="project">
-      <h3>MindScape (Unity Engine)</h3>
-      <img src="https://github.com/Datonlinegamer/Jade-Kearney-GameProgrammingPortfollo/blob/main/Min.png?raw=true" alt="MindScape">
-      <p><a href="MindScape-detail.html" class="button">View Details</a></p>
-    </div>
-    <div class="project">
-      <h3>Psycho Blockers (Unity Engine)</h3>
-      <img src="https://github.com/Datonlinegamer/Jade-Kearney-GameProgrammingPortfollo/blob/main/gg.png?raw=true" alt="Psycho Blockers">
-      <p><a href="Psycho blockers-details.html" class="button">View Details</a></p>
-    </div>
-    <div class="project">
-      <h3>Orlo (Unity Engine)</h3>
-      <img src="https://github.com/Datonlinegamer/Jade-Kearney-GameProgrammingPortfollo/blob/main/orloCover.png?raw=true" alt="Orlo">
-      <p><a href="Orlo-details.html" class="button">View Details</a></p>
-    </div>
+
+  <div class="video-container">
+    <iframe src="https://www.youtube.com/embed/JqJ3DRqUoU4" 
+      title="Demo Reel" allowfullscreen></iframe>
   </div>
-</section>
 
-    <footer>
-        &copy; 2025 Jade Kearney. All rights reserved.
-    </footer>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <p>
+      I’m a passionate gameplay programmer experienced in Unreal Engine 5 and Unity, 
+      specializing in player mechanics, AI behavior, and performance optimization. 
+      I enjoy solving complex problems and creating memorable player experiences.
+    </p>
+  </section>
+
+ 
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="projects-container">
+      <div class="project">
+        <img src="https://github.com/Datonlinegamer/Jade-Kearney-GameProgrammingPortfollo/blob/main/BG.png?raw=true" alt="FrogDoku">
+        <h3>FrogDoku</h3>
+        <p>Unreal Engine 5 Developer (Digital Scorpion Interactive) – Assisted in diagnosing and resolving engine-level graphical issues.</p>
+        <a href="https://store.steampowered.com/app/xxxxx/FrogDoku/" target="_blank" class="button">Steam</a>
+      </div>
+
+      <div class="project">
+        <img src="https://github.com/Datonlinegamer/Jade-Kearney-GameProgrammingPortfollo/blob/main/BG.png?raw=true" alt="Psycho Blockers">
+        <h3>Psycho Blockers</h3>
+        <p>Solo Hack-and-Slash Platformer (Unity) – Developed combat mechanics, player movement, and level design.</p>
+        <a href="https://datonlinegamer.itch.io/" target="_blank" class="button">itch.io</a>
+      </div>
+
+      <div class="project">
+        <img src="https://github.com/Datonlinegamer/Jade-Kearney-GameProgrammingPortfollo/blob/main/BG.png?raw=true" alt="Orlo">
+        <h3>Orlo</h3>
+        <p>Team Project (Unity, 10 members) – Created character movement systems and gameplay interactions.</p>
+        <a href="https://itch.io/" target="_blank" class="button">itch.io</a>
+      </div>
+
+      <div class="project">
+        <img src="https://github.com/Datonlinegamer/Jade-Kearney-GameProgrammingPortfollo/blob/main/BG.png?raw=true" alt="Space Invaders Clone">
+        <h3>Space Invaders Clone</h3>
+        <p>Raylib C++ remake (PC) – Implemented custom sprite rendering and input systems.</p>
+        <a href="https://github.com/" target="_blank" class="button">GitHub</a>
+      </div>
+    </div>
+  </section>
+
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>📧 <a href="mailto:jadekearney.dev@gmail.com">jadekearney.dev@gmail.com</a></p>
+    <p>🔗 <a href="https://www.linkedin.com/in/jadekearney">LinkedIn</a> | <a href="https://github.com/Datonlinegamer">GitHub</a></p>
+  </section>
+
+  <footer>
+    <p>© 2025 Jade Kearney. All rights reserved.</p>
+  </footer>
 
 </body>
 </html>
-
-
-
-
