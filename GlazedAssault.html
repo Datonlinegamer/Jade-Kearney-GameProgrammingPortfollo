@@ -3,126 +3,105 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>GlazedAssault - Game Breakdown</title>
-   <style>
+  <title>GlazedAssult- Game Breakdown</title>
+  <style>
     body {
       font-family: 'Inter', sans-serif;
       background-color: #111;
       color: #eee;
-      padding: 2rem;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .container {
+      background-color: #111217;
+      color: #eee;
       max-width: 900px;
-      margin: auto;
-      line-height: 1.6;
+      width: 100%;
+      padding: 2rem;
+      box-shadow: 0 0 25px rgba(0, 0, 0, 0.6);
+      border-radius: 10px;
+      box-sizing: border-box;
     }
-    .code-image {
-      width: 250px;
-      height: auto;
-    }
-    h1, h2 {
+
+    h1, h2, h3 {
       color: #0ff;
+      margin-bottom: 0.5rem;
     }
+
     iframe {
       width: 100%;
       height: 400px;
       border: none;
-      margin-bottom: 2rem;
+      border-radius: 8px;
+      margin-bottom: 1rem;
     }
+
     ul {
       list-style-type: disc;
-      margin-left: 1rem;
-      padding-left: 1rem;
+      padding-left: 1.2rem;
     }
+
+    p, li {
+      line-height: 1.6;
+    }
+
     a {
       color: #0ff;
       text-decoration: underline;
     }
-    .carousel {
-      position: relative;
-      overflow: hidden;
-      width: 100%;
-      max-width: 300px;
-      margin: 0;
-    }
-    .carousel-wrapper {
-      width: 100%;
-      display: block;
-      margin-top: 1rem;
-    }
-    .carousel-track {
-      display: flex;
-      justify-content: flex-start;
-      transition: transform 0.5s ease-in-out;
-    }
-    .carousel-track img {
-      width: 250px;
-      height: 150px;
-      object-fit: cover;
-      margin: 0;
-      padding: 0;
-    }
-    .carousel-button {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      background-color: rgba(0, 0, 0, 0.5);
-      color: #0ff;
-      border: none;
-      font-size: 2rem;
-      cursor: pointer;
-      padding: 0;
-      z-index: 1;
-    }
-    .carousel-button.prev {
-      left: 0;
-    }
-    .carousel-button.next {
-      right: 0;
+
+    a:hover {
+      color: #0cc;
     }
   </style>
 </head>
 <body>
-  <h1> GlazedAssault- Game Breakdown</h1>
+  <div class="container">
+    <h1>GlazedAssult- Game Breakdown</h1>
 
-  <iframe 
-    src="https://www.youtube.com/embed/GEYo68-x2c8" 
+    <iframe 
+    width="560" 
+    height="315" 
+    src="https://www.youtube.com/embed/s2ySXKLILOA" 
     frameborder="0" 
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
     allowfullscreen>
-  </iframe>
+</iframe>
 
-  <h2>Platforms</h2>
-  <ul>
-    <li>PC</li>
-  </ul>
+   
+    <p><li>Solo</li></p>
 
-  <h2>Tools</h2>
-  <ul>
-    <li>DirectX 11</li>
-    <li>CMake</li>
-    <li>Visual Studio</li>
-    <li>GitHub</li>
-  </ul>
+    <h2>Platforms</h2>
+    <p><li>PC </li></p>
 
-  <h2>Languages</h2>
-  <ul>
-    <li>C++</li>
-  </ul>
+    <h2>Tools</h2>
+    <ul>
+      
+      <li>Visual Studio 2022</li>
+      <li>CMake</li>
+      <li>DirectX11</li>
+      <li>Github</li>
+    </ul>
 
-  <h2>Duration</h2>
-  <ul>
-    <li>2 Months</li>
-  </ul>
+    <h2>Languages</h2>
+    <ul>
+      <li>C++</li>
+    </ul>
 
-  <h2>Role</h2>
-  <ul>
-    <li>Solo Developer</li>
-  </ul>
+    <h2>Duration</h2>
+    <p><li>6 months</li></p>
 
-  <h2>Summary</h2>
-  <p>
-    GlazedAssault is a 2D action-packed shoot 'em up where the player must survive a relentless assault of croissant enemies in a single-screen arena. Players manage a combo meter to unleash powerful abilities and outlast increasingly difficult waves.
-  </p>
-
-  <h2>Core Systems</h2>
+    <h2>Summary</h2>
+    <p>
+ GlazedAssault is a 2D action-packed shoot 'em up where the player must survive a relentless assault of croissant enemies in a single-screen arena. Players manage a combo meter to unleash powerful abilities and outlast increasingly difficult waves.
+  
+    </p>
+      <h2>Core Systems</h2>
   <ul>
     <li><strong>Character Movement & Controls</strong> – Implement smooth and responsive player movement for dodging enemies and navigating the environment.</li>
     <li><strong>Player Input Handling</strong> – Manage keyboard and mouse controls for character movement, aiming, and firing projectiles.</li>
@@ -160,6 +139,5 @@
     <li>Game-over allows players to restart and attempt to beat their best time.</li>
   </ul>
 
-  <p><a href="index.html">← Back to Portfolio</a></p>
-</body>
-</html>
+
+  
